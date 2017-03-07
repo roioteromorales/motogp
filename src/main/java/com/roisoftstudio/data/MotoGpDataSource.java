@@ -1,7 +1,7 @@
-package data;
+package com.roisoftstudio.data;
 
-import domain.Calendar;
-import infrastructure.retrofit.MotoGpAPI;
+import com.roisoftstudio.domain.Calendar;
+import com.roisoftstudio.infrastructure.retrofit.MotoGpAPI;
 import org.springframework.stereotype.Service;
 import retrofit2.Response;
 

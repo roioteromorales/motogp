@@ -1,7 +1,6 @@
-package domain;
+package com.roisoftstudio;
 
-import infrastructure.Application;
-import infrastructure.threading.Executor;
+import com.roisoftstudio.domain.CalendarUseCase;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,10 +10,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.inject.Inject;
 
-import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes= Application.class)
+@SpringBootTest
 public class RaceScrapperTest {
 
     @Inject

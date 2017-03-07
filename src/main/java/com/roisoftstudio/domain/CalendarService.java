@@ -1,6 +1,6 @@
-package domain;
+package com.roisoftstudio.domain;
 
-import data.MotoGpDataSource;
+import com.roisoftstudio.data.MotoGpDataSource;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;

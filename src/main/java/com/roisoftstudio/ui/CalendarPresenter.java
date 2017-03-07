@@ -1,4 +1,4 @@
-package ui;
+package com.roisoftstudio.ui;
 
 public class CalendarPresenter {
 

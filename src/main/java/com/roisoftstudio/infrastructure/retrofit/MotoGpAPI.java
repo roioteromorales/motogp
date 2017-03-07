@@ -1,6 +1,6 @@
-package infrastructure.retrofit;
+package com.roisoftstudio.infrastructure.retrofit;
 
-import domain.Calendar;
+import com.roisoftstudio.domain.Calendar;
 import retrofit2.Call;
 import retrofit2.http.GET;
 

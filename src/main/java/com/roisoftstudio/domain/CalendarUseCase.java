@@ -1,7 +1,7 @@
-package domain;
+package com.roisoftstudio.domain;
 
-import infrastructure.threading.Executor;
-import infrastructure.usecase.UseCase;
+import com.roisoftstudio.infrastructure.threading.Executor;
+import com.roisoftstudio.infrastructure.usecase.UseCase;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;

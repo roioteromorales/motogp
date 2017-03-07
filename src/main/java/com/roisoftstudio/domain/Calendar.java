@@ -1,4 +1,4 @@
-package domain;
+package com.roisoftstudio.domain;
 
 public class Calendar {
     private  int competition_id;

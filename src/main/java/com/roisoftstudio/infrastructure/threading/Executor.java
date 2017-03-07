@@ -1,4 +1,4 @@
-package infrastructure.threading;
+package com.roisoftstudio.infrastructure.threading;
 
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package infrastructure.usecase;
+package com.roisoftstudio.infrastructure.usecase;
 
-import infrastructure.threading.Executor;
+import com.roisoftstudio.infrastructure.threading.Executor;
 
 import java.util.function.Consumer;
 
