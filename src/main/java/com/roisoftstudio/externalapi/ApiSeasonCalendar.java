@@ -1,6 +1,6 @@
-package com.roisoftstudio.domain;
+package com.roisoftstudio.externalapi;
 
-public class Calendar {
+public class ApiSeasonCalendar {
     private  int competition_id;
     private  String competition_name;
     private  String competition_short_name;
@@ -30,7 +30,7 @@ public class Calendar {
 
     @Override
     public String toString() {
-        return "Calendar{" +
+        return "ApiSeasonCalendar{" +
                 "competition_id=" + competition_id +
                 ", competition_name='" + competition_name + '\'' +
                 ", competition_short_name='" + competition_short_name + '\'' +

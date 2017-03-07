@@ -1,6 +1,6 @@
 package com.roisoftstudio.data;
 
-import com.roisoftstudio.domain.Calendar;
+import com.roisoftstudio.externalapi.ApiSeasonCalendar;
 import com.roisoftstudio.infrastructure.retrofit.MotoGpAPI;
 import org.springframework.stereotype.Service;
 import retrofit2.Response;
@@ -18,9 +18,9 @@ public class MotoGpDataSource {
         this.motoGpAPI = motoGpAPI;
     }
 
-    public Calendar getCalendar() {
+    public ApiSeasonCalendar getCalendar() {
         try {
-            Response<Calendar> calendarResponse = motoGpAPI.calendar().execute();
+            Response<ApiSeasonCalendar> calendarResponse = motoGpAPI.calendar().execute();
             if (calendarResponse.isSuccessful()) {
                 return calendarResponse.body();
             }

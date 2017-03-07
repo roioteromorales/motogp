@@ -1,5 +1,6 @@
 package com.roisoftstudio.domain;
 
+import com.roisoftstudio.externalapi.ApiSeasonCalendar;
 import com.roisoftstudio.infrastructure.threading.Executor;
 import com.roisoftstudio.infrastructure.usecase.UseCase;
 import org.springframework.stereotype.Service;
@@ -7,7 +8,7 @@ import org.springframework.stereotype.Service;
 import javax.inject.Inject;
 
 @Service
-public class CalendarUseCase extends UseCase<Calendar> {
+public class CalendarUseCase extends UseCase<ApiSeasonCalendar> {
 
     private CalendarService calendarService;
 
@@ -19,7 +20,7 @@ public class CalendarUseCase extends UseCase<Calendar> {
 
     @Override
     protected void onRun() {
-        Calendar calendar = calendarService.getCalendar();
-        notifySuccess(calendar);
+        ApiSeasonCalendar seasonCalendar = calendarService.getCalendar();
+        notifySuccess(seasonCalendar);
     }
 }

@@ -1,6 +1,7 @@
 package com.roisoftstudio.domain;
 
 import com.roisoftstudio.data.MotoGpDataSource;
+import com.roisoftstudio.externalapi.ApiSeasonCalendar;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
@@ -14,7 +15,7 @@ public class CalendarService {
         this.motoGpDataSource = motoGpDataSource;
     }
 
-    public Calendar getCalendar(){
+    public ApiSeasonCalendar getCalendar() {
         return motoGpDataSource.getCalendar();
     }
 

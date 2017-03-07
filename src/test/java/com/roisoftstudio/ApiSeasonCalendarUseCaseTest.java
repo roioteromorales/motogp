@@ -7,13 +7,12 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-
 import javax.inject.Inject;
 
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class RaceScrapperTest {
+public class ApiSeasonCalendarUseCaseTest {
 
     @Inject
     private CalendarUseCase calendarUseCase;
@@ -24,7 +23,7 @@ public class RaceScrapperTest {
 
     @Test
     public void getRace() throws Exception {
-        calendarUseCase.onSuccess(System.out::println).run();
+        calendarUseCase.onSuccess(System.out::println).onError(System.out::println).run();
         Thread.sleep(2000);
 //        assertThat(race).isEqualTo("ARG");
     }

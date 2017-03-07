@@ -1,8 +1,7 @@
 package com.roisoftstudio.infrastructure.retrofit;
 
 
-
-import com.roisoftstudio.domain.Calendar;
+import com.roisoftstudio.externalapi.ApiSeasonCalendar;
 import org.springframework.stereotype.Service;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -11,7 +10,7 @@ import retrofit2.Response;
 import javax.inject.Inject;
 
 @Service
-public class Controller implements Callback<Calendar> {
+public class Controller implements Callback<ApiSeasonCalendar> {
 
     private MotoGpAPI motoGpAPI;
     private Runnable callback;
@@ -23,14 +22,14 @@ public class Controller implements Callback<Calendar> {
 
     public void start(Runnable callback) {
         this.callback = callback;
-        Call<Calendar> call = motoGpAPI.calendar();
+        Call<ApiSeasonCalendar> call = motoGpAPI.calendar();
         call.enqueue(this);
     }
 
     @Override
-    public void onResponse(Call<Calendar> call, Response<Calendar> response) {
+    public void onResponse(Call<ApiSeasonCalendar> call, Response<ApiSeasonCalendar> response) {
         if (response.isSuccessful()) {
-            Calendar calendar = response.body();
+            ApiSeasonCalendar seasonCalendar = response.body();
             callback.run();
         } else {
             System.out.println(response.errorBody());
@@ -38,7 +37,7 @@ public class Controller implements Callback<Calendar> {
     }
 
     @Override
-    public void onFailure(Call<Calendar> call, Throwable t) {
+    public void onFailure(Call<ApiSeasonCalendar> call, Throwable t) {
         t.printStackTrace();
     }
 }
