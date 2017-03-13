@@ -1,6 +1,7 @@
 package com.roisoftstudio.api;
 
 import com.roisoftstudio.domain.SeasonCalendarService;
+import com.roisoftstudio.domain.model.SeasonCalendar;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,8 +15,8 @@ public class CalendarController {
     private SeasonCalendarService seasonCalendarService;
 
     @RequestMapping("/calendar/{year}")
-    public String calendar(@PathVariable String year) {
-        return seasonCalendarService.get(year).toString();
+    public SeasonCalendar calendar(@PathVariable String year) {
+        return seasonCalendarService.get(year);
     }
 
 }
