@@ -1,4 +1,4 @@
-package com.roisoftstudio.data;
+package com.roisoftstudio.data.calendar;
 
 import com.roisoftstudio.domain.model.SeasonCalendar;
 import org.springframework.stereotype.Service;
