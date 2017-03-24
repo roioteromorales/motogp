@@ -1,7 +1,7 @@
 package com.roisoftstudio.api;
 
-import com.roisoftstudio.domain.SeasonCalendarService;
-import com.roisoftstudio.domain.model.SeasonCalendar;
+import com.roisoftstudio.domain.CalendarService;
+import com.roisoftstudio.domain.model.calendar.Calendar;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,11 +14,11 @@ import javax.inject.Inject;
 public class CalendarController {
 
     @Inject
-    private SeasonCalendarService seasonCalendarService;
+    private CalendarService calendarService;
 
     @RequestMapping("/calendar/{year}")
-    public SeasonCalendar calendar(@PathVariable String year) {
-        return seasonCalendarService.get(year);
+    public Calendar calendar(@PathVariable String year) {
+        return calendarService.get(year);
     }
 
 }

@@ -1,22 +1,23 @@
-package com.roisoftstudio.domain.model;
+package com.roisoftstudio.domain.model.calendar;
 
+import com.roisoftstudio.domain.model.race.GrandPrix;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.util.List;
 
 import static java.util.Collections.emptyList;
 
-public class SeasonCalendar {
-    public static final SeasonCalendar EMPTY = new SeasonCalendar("", "", emptyList());
+public class Calendar {
+    public static final Calendar EMPTY = new Calendar("", "", emptyList());
 
     private String name;
     private String year;
-    private List<RacePreview> races;
+    private List<GrandPrix> grandPrix;
 
-    public SeasonCalendar(String name, String year, List<RacePreview> races) {
+    public Calendar(String name, String year, List<GrandPrix> grandPrix) {
         this.name = name;
         this.year = year;
-        this.races = races;
+        this.grandPrix = grandPrix;
     }
 
     public String getName() {
@@ -27,8 +28,8 @@ public class SeasonCalendar {
         return year;
     }
 
-    public List<RacePreview> getRaces() {
-        return races;
+    public List<GrandPrix> getGrandPrix() {
+        return grandPrix;
     }
 
     @Override
@@ -36,7 +37,7 @@ public class SeasonCalendar {
         return new ToStringBuilder(this)
                 .append("name", name)
                 .append("year", year)
-                .append("races", races)
+                .append("grandPrix", grandPrix)
                 .toString();
     }
 }
