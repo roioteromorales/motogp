@@ -1,7 +1,6 @@
 package com.roisoftstudio.data.event;
 
 public enum EventType {
-
     FP1,
     FP2,
     FP3,

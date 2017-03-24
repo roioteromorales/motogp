@@ -2,14 +2,17 @@ package com.roisoftstudio.domain.model.event;
 
 import com.roisoftstudio.data.event.Category;
 import com.roisoftstudio.data.event.EventType;
+import com.roisoftstudio.data.event.Results;
 
 public class Event {
     private Category category;
     private EventType type;
+    private Results results;
 
-    public Event(Category category, EventType type) {
+    public Event(Category category, EventType type, Results results) {
         this.category = category;
         this.type = type;
+        this.results = results;
     }
 
     public EventType getType() {
@@ -18,5 +21,9 @@ public class Event {
 
     public Category getCategory() {
         return category;
+    }
+
+    public Results getResults() {
+        return results;
     }
 }

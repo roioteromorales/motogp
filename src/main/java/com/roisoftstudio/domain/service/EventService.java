@@ -24,6 +24,10 @@ public class EventService {
         return eventRepository.getByGPId(gpId);
     }
 
+    public List<Event> getEvent(String gpId, Category category) {
+        return eventRepository.getByGPIdAndCategory(gpId, category);
+    }
+
     public Event getEvent(String gpId, Category category, EventType eventType) {
         return eventRepository.getByGPIdAndEventType(gpId, category, eventType);
     }

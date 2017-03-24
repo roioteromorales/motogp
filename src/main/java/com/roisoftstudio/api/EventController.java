@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.inject.Inject;
+import java.util.List;
 
 @CrossOrigin
 @RestController
@@ -21,6 +22,12 @@ public class EventController {
     @RequestMapping("/gp/{gpId}/category/{category}/event/{eventType}")
     public Event getEvent(@PathVariable String gpId, @PathVariable Category category, @PathVariable EventType eventType) {
         return eventService.getEvent(gpId, category, eventType);
+    }
+
+
+    @RequestMapping("/gp/{gpId}/category/{category}")
+    public List<Event> getEvent(@PathVariable String gpId, @PathVariable Category category) {
+        return eventService.getEvent(gpId, category);
     }
 
 
