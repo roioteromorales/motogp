@@ -22,7 +22,7 @@ public class GPService {
         return gpRepository.getByYear(year);
     }
 
-    public GrandPrix get(int year, int gpId) {
-        return gpRepository.getByYearAndId(year, gpId);
+    public GrandPrix get(String gpId) {
+        return gpRepository.getById(gpId);
     }
 }

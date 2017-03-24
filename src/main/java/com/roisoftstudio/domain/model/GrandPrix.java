@@ -3,28 +3,28 @@ package com.roisoftstudio.domain.model;
 import java.time.LocalDate;
 
 public class GrandPrix {
+    private String id;
     private int year;
-    private int id;
     private String description;
     private String country;
     private LocalDate date;
     private String status;
 
-    public GrandPrix(int year, int id, String description, String country, LocalDate date, String status) {
-        this.year = year;
+    public GrandPrix(String id, int year, String description, String country, LocalDate date, String status) {
         this.id = id;
+        this.year = year;
         this.description = description;
         this.country = country;
         this.date = date;
         this.status = status;
     }
 
-    public int getYear() {
-        return year;
+    public String getId() {
+        return id;
     }
 
-    public int getId() {
-        return id;
+    public int getYear() {
+        return year;
     }
 
     public String getDescription() {

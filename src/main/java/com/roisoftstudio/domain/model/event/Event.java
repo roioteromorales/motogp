@@ -1,11 +1,22 @@
 package com.roisoftstudio.domain.model.event;
 
-public class Event {
-    private String category;
-    private String type;
+import com.roisoftstudio.data.event.Category;
+import com.roisoftstudio.data.event.EventType;
 
-    public Event(String category, String type) {
+public class Event {
+    private Category category;
+    private EventType type;
+
+    public Event(Category category, EventType type) {
         this.category = category;
         this.type = type;
+    }
+
+    public EventType getType() {
+        return type;
+    }
+
+    public Category getCategory() {
+        return category;
     }
 }

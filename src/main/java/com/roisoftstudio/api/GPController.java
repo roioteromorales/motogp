@@ -17,14 +17,14 @@ public class GPController {
     @Inject
     private GPService gpService;
 
-    @RequestMapping("/gp/{year}/{id}")
-    public GrandPrix grandPrix(@PathVariable int year, @PathVariable int id) {
-        return gpService.get(year, id);
+    @RequestMapping("/gp/{id}")
+    public GrandPrix getGrandPrixById(@PathVariable String id) {
+        return gpService.get(id);
     }
 
 
-    @RequestMapping("/gp/{year}")
-    public List<GrandPrix> grandPrixByYear(@PathVariable int year) {
+    @RequestMapping("/gps/{year}")
+    public List<GrandPrix> listGrandPrixByYear(@PathVariable int year) {
         return gpService.get(year);
     }
 
