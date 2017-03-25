@@ -1,6 +1,8 @@
 package com.roisoftstudio.data.event;
 
+import com.roisoftstudio.domain.model.event.Category;
 import com.roisoftstudio.domain.model.event.Event;
+import com.roisoftstudio.domain.model.event.EventType;
 
 import java.util.List;
 

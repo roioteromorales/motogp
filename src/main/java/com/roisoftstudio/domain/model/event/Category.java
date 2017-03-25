@@ -1,4 +1,4 @@
-package com.roisoftstudio.data.event;
+package com.roisoftstudio.domain.model.event;
 
 public enum Category {
     MOTOGP,

@@ -1,8 +1,8 @@
 package com.roisoftstudio.api;
 
-import com.roisoftstudio.data.event.Category;
-import com.roisoftstudio.data.event.EventType;
+import com.roisoftstudio.domain.model.event.Category;
 import com.roisoftstudio.domain.model.event.Event;
+import com.roisoftstudio.domain.model.event.EventType;
 import com.roisoftstudio.domain.service.EventService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;

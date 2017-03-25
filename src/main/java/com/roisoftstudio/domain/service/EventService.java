@@ -1,9 +1,9 @@
 package com.roisoftstudio.domain.service;
 
-import com.roisoftstudio.data.event.Category;
 import com.roisoftstudio.data.event.EventRepository;
-import com.roisoftstudio.data.event.EventType;
+import com.roisoftstudio.domain.model.event.Category;
 import com.roisoftstudio.domain.model.event.Event;
+import com.roisoftstudio.domain.model.event.EventType;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;

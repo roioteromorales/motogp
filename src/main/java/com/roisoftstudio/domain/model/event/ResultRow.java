@@ -1,4 +1,4 @@
-package com.roisoftstudio.data.event;
+package com.roisoftstudio.domain.model.event;
 
 import com.roisoftstudio.domain.model.rider.Rider;
 
