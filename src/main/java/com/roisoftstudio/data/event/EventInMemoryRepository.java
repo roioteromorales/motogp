@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static com.roisoftstudio.data.rider.Riders.*;
+import static com.roisoftstudio.data.rider.RidersMotoGP.*;
 import static com.roisoftstudio.domain.model.event.Category.*;
 import static com.roisoftstudio.domain.model.event.EventType.RACE;
 import static java.util.Arrays.asList;
@@ -41,21 +41,18 @@ public class EventInMemoryRepository implements EventRepository {
     private static Map<String, List<Event>> getEvents() {
         Map<String, List<Event>> eventsByGp = new HashMap<>();
         eventsByGp.put("2017-01", asList(
-                new Event(MOTOGP, RACE, getResults()),
-                new Event(MOTO2, RACE, getResults()),
-                new Event(MOTO3, RACE, getResults())));
+                new Event("qat-motogp-race", MOTOGP, RACE, getResults()),
+                new Event("qat-moto2-race", MOTO2, RACE, getResults()),
+                new Event("qat-moto3-race", MOTO3, RACE, getResults())));
         eventsByGp.put("2017-02", asList(
-                new Event(MOTOGP, RACE, getResults()),
-                new Event(MOTO2, RACE, getResults()),
-                new Event(MOTO3, RACE, getResults())));
+                new Event("qat-motogp-race", MOTOGP, RACE, getResults()),
+                new Event("qat-moto2-race", MOTO2, RACE, getResults()),
+                new Event("qat-moto3-race", MOTO3, RACE, getResults())));
         return eventsByGp;
     }
 
-    private static Results getResults() {
-        Results results = new Results();
-        List<ResultRow> resultRows = getResultRows();
-        results.setResultRows(resultRows);
-        return results;
+    public static Results getResults() {
+        return new Results(getResultRows(), new LapResult(14, MAVERIK_VINALES, "1:54.316", "169.4 km/h"));
     }
 
     private static List<ResultRow> getResultRows() {
