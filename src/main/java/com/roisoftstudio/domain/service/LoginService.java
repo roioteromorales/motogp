@@ -10,7 +10,7 @@ import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 public class LoginService {
     public AuthToken login(LoginCredentials loginCredentials) {
         if (isNotEmpty(loginCredentials.getEmail())) {
-            return new AuthToken("valid");
+            return new AuthToken(loginCredentials.getEmail());
         } else {
             return null;
         }
