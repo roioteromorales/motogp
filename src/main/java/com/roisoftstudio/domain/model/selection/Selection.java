@@ -1,26 +1,45 @@
 package com.roisoftstudio.domain.model.selection;
 
 import com.roisoftstudio.domain.model.event.Category;
-import com.roisoftstudio.domain.model.event.Results;
+import com.roisoftstudio.domain.model.event.LapResult;
+import com.roisoftstudio.domain.model.rider.Rider;
 
 public class Selection {
-    private Category category;
-    private Results results;
+    private final Category category;
+    private final Rider firstPosition;
+    private final Rider secondPosition;
+    private final Rider thirdPosition;
+    private final LapResult fastestLap;
 
-    public Selection(Category category, Results results) {
+    public Selection(Category category, Rider firstPosition, Rider secondPosition, Rider thirdPosition, LapResult fastestLap) {
         this.category = category;
-        this.results = results;
+        this.firstPosition = firstPosition;
+        this.secondPosition = secondPosition;
+        this.thirdPosition = thirdPosition;
+        this.fastestLap = fastestLap;
+    }
+
+    public Rider getFirstPosition() {
+        return firstPosition;
+    }
+
+    public Rider getSecondPosition() {
+        return secondPosition;
+    }
+
+    public Rider getThirdPosition() {
+        return thirdPosition;
+    }
+
+    public LapResult getFastestLap() {
+        return fastestLap;
     }
 
     public Category getCategory() {
         return category;
     }
 
-    public Results getResults() {
-        return results;
-    }
-
     public static Selection empty() {
-        return new Selection(null, null);
+        return new Selection(null, null, null, null, null);
     }
 }
