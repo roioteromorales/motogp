@@ -20,4 +20,7 @@ public class Selection {
         return results;
     }
 
+    public static Selection empty() {
+        return new Selection(null, null);
+    }
 }

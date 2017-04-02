@@ -10,7 +10,9 @@ import java.util.Map;
 
 import static com.roisoftstudio.data.event.EventInMemoryRepository.getResults;
 import static com.roisoftstudio.domain.model.event.Category.*;
+import static com.roisoftstudio.domain.model.selection.Selection.empty;
 import static java.util.Arrays.asList;
+import static java.util.Collections.emptyList;
 
 @Service
 public class SelectionInMemoryRepository implements SelectionRepository {
@@ -19,18 +21,19 @@ public class SelectionInMemoryRepository implements SelectionRepository {
 
     @Override
     public Selection getByGPIdAndCategory(String userId, Category category) {
-        return selectionList.get(userId).stream()
+        List<Selection> selections = selectionList.getOrDefault(userId, emptyList());
+        return selections.stream()
                 .filter(event -> category.equals(event.getCategory()))
-                .findFirst().get();
+                .findFirst().orElse(empty());
     }
 
     private static Map<String, List<Selection>> getSelections() {
         Map<String, List<Selection>> selectionsByUserId = new HashMap<>();
-        selectionsByUserId.put("userId1", asList(
+        selectionsByUserId.put("1", asList(
                 new Selection(MOTOGP, getResults()),
                 new Selection(MOTO2, getResults()),
                 new Selection(MOTO3, getResults())));
-        selectionsByUserId.put("userId2", asList(
+        selectionsByUserId.put("2", asList(
                 new Selection(MOTOGP, getResults()),
                 new Selection(MOTO2, getResults()),
                 new Selection(MOTO3, getResults())));
