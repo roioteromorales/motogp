@@ -8,6 +8,9 @@ public class LapResult {
     private String time;
     private String avgSpeed;
 
+    public LapResult() {
+    }
+
     public LapResult(int lapNumber, Rider rider, String time, String avgSpeed) {
         this.lapNumber = lapNumber;
         this.rider = rider;

@@ -7,6 +7,9 @@ public class Rider {
     private String team;
     private String bike;
 
+    public Rider() {
+    }
+
     public Rider(int number, String name, String nationality, String team, String bike) {
         this.number = number;
         this.name = name;

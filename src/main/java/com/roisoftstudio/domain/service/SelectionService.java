@@ -19,8 +19,11 @@ public class SelectionService {
 
 
     public Selection getSelection(String userId, Category category) {
-        return selectionRepository.getByGPIdAndCategory(userId, category);
+        return selectionRepository.getByUserIdAndCategory(userId, category);
     }
 
+    public Selection saveSelection(String userId, Category category, Selection selection) {
+        return selectionRepository.saveByUserIdAndCategory(userId, category, selection);
+    }
 
 }

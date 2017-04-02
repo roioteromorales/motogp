@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.inject.Inject;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @CrossOrigin
 @RestController
@@ -22,8 +23,8 @@ public class SelectionController {
         return selectionService.getSelection(userId, category);
     }
 
-//    @RequestMapping(value = "/", method = POST)
-//    public Selection postSelection(@PathVariable String userId, @PathVariable Category category) {
-//        return selectionService.getSelection(userId, category);
-//    }
+    @RequestMapping(value = "/", method = POST)
+    public Selection postSelection(@RequestHeader("X-Authorization") String userId, @PathVariable Category category, @RequestBody Selection selection) {
+        return selectionService.saveSelection(userId, category, selection);
+    }
 }
